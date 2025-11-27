@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bataille navale.cpp" />
     <ClCompile Include="h\main.cpp" />
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="programme.cpp" />
@@ -147,7 +146,6 @@
     <ClCompile Include="src\contre-torpilleur.cpp" />
     <ClCompile Include="src\croiseur.cpp" />
     <ClCompile Include="src\grille.cpp" />
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\porte-avion.cpp" />
     <ClCompile Include="src\sous-marin.cpp" />
     <ClCompile Include="src\torpilleur.cpp" />

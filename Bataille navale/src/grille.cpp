@@ -1,4 +1,4 @@
-#include"grille.h"
+#include "grille.h"
 
 grille::grille() {
 	for (int i = 0; i < 10; i++) {

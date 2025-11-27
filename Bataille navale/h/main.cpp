@@ -9,6 +9,12 @@
 
 int main() {
 
-	//initialisation des bateaux
-	grille g;
+	//initialisation des grilles de jeu
+	// G1 = humain tire robot place
+	// G2 = robot tire et humain place
+	grille G1 = grille();
+	grille G2 = grille();
+
+
+
 }

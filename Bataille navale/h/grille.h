@@ -2,12 +2,11 @@
 
 #include<iostream>
 #include<vector>
-using namespace std
+using namespace std;
 
 class grille {
 	protected:
 		vector<vector<char>> lagrille;
 	public:
 		grille();
-
 };

@@ -10,7 +10,7 @@ class grille {
 	public:
 		grille();
 
-		// Ajout de l'opérateur [] pour accéder à lagrille comme un tableau 2D
+		// Ajout de l'opï¿½rateur [] pour accï¿½der ï¿½ lagrille comme un tableau 2D
 		vector<char>& operator[](size_t index) {
 			return lagrille[index];
 		}

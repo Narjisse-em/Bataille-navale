@@ -2,10 +2,9 @@
 
 #include<iostream>
 #include <cstdlib>
-using namespace std
+using namespace std;
 
-#include"bateau.h"
-#include"grille.h"
+#include "include.h"
 
 void bateau::placement() {
 	bool bien_place = false;

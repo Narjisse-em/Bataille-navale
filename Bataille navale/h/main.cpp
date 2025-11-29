@@ -22,7 +22,7 @@ int main() {
 	while (fini = false) {
 
 		vector<grille> vec = { G1,G2 };
-		vec = jouer(G1, G2);
+		//vec = jouer(G1, G2);
 
 	}
 

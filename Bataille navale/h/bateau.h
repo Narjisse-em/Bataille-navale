@@ -7,5 +7,4 @@ class bateau {
 		int x_touche, y_touche;
 	public:
 		void placement();
-
 }; 

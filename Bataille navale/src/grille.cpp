@@ -13,3 +13,25 @@ grille::grille() {
 	}
 }
 
+const vector<vector<char>>& grille::getGrille() const {
+	return lagrille;
+}
+
+ostream& operator<<(ostream& os, const grille g) {
+	const auto& m = g.getGrille();
+
+
+	//syntaxe dans le for : on definit ligne ou c comme chaque élément de m ou ligne
+	// très pratique :)
+
+	for (const auto& ligne : m) {
+		for (char c : ligne) {
+			os << c;
+
+		}
+		os << "\n";
+	}
+
+	return os;
+}
+

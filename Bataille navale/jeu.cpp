@@ -25,10 +25,11 @@ static vector<grille> jouer(grille G1, grille G2) {
 
 
 	//G1 = grille où l'humain tire avec bateaux ordi
+	//G2 = grille où l'ordi tire avec bateaux humain
 	//test d'arrêt
 	int i = 0;
 
-	while (i == 0) {
+	while (i != 2) {
 
 		// tour de l'humain
 		int xA;
@@ -69,7 +70,7 @@ static vector<grille> jouer(grille G1, grille G2) {
 	
 
 
-	while (i == 0) {
+	while (i == 1) {
 
 		
 
@@ -77,7 +78,7 @@ static vector<grille> jouer(grille G1, grille G2) {
 		int yA = dist(gen);
 
 		if (G2[xA][yA] == 'X' || G2[xA][yA] == 'O') {
-				i==0;
+				i==1;
 		}
 
 		else {
@@ -86,18 +87,19 @@ static vector<grille> jouer(grille G1, grille G2) {
 			if (G2[xA][yA] == 'B') {
 				cout << "L'ordi vous a eu HAHAHA" << endl;
 				G2[xA][yA] = 'X';
-				i = 1;
+				i = 2;
 			}
 
 			//la case est vide	
 			if (G2[xA][yA] == 'V') {
 				cout << "l'ordi ne vous a pas eu... OUF!" << endl;
 				G2[xA][yA] = 'O';
-				i = 1;
+				i = 2;
 			}
 		}
 		break;
 	}
 	return {G1, G2};
+	
 }
 

@@ -2,21 +2,26 @@
 
 #include<iostream>
 #include <cstdlib>
+#include "bateau.h"
+#include "grille.h"
 using namespace std;
 
 #include "include.h"
 
 void bateau::placement() {
+	int length;
 	bool bien_place = false;
 	grille g;
 	while (!bien_place) {
-		int randomNum = rand() % (11-length);
+		int randomNum = rand() % (11 - length);
 		//horizontalement
 		for (int i = randomNum; i < randomNum + length; i++) {
 			for (int j = randomNum; j < randomNum + length; j++) {
-				if (g[i][j]=="V"){
+				if (g[i][j] == 'V') {
 					bien_place = false;
+
+				}
+			}
 		}
 	}
-
 }

@@ -1,6 +1,6 @@
 #include <vector>
 #include <string>
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\grille.h"
+#include "grille.h"
 
 grille::grille() {
 	vector<vector<char>> lagrille;

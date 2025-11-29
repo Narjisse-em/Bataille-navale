@@ -1,25 +1,12 @@
 #include<iostream>
-
-#pragma once
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\grille.h"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\bateau.h"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\contre-torpilleur.h"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\croiseur.h"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\porte-avion.h"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\sous-marin.h"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\torpilleur.h"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h\jeu.h"
-
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\bateau.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\contre-torpilleur.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\croiseur.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\grille.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\jeu.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\porte-avion.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\sous-marin.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\initialisation.cpp"
-#include "C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src\torpilleur.cpp"
-
+#include "grille.h"
+#include "bateau.h"
+#include "contre-torpilleur.h"
+#include "croiseur.h"
+#include "porte-avion.h"
+#include "sous-marin.h"
+#include "torpilleur.h"
+#include "jeu.h"
 
 int main() {
 

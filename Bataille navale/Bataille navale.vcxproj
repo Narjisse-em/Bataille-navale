@@ -156,11 +156,10 @@
     <ClInclude Include="h\contre-torpilleur.h" />
     <ClInclude Include="h\croiseur.h" />
     <ClInclude Include="h\grille.h" />
+    <ClInclude Include="h\jeu.h" />
     <ClInclude Include="h\porte-avion.h" />
     <ClInclude Include="h\sous-marin.h" />
     <ClInclude Include="h\torpilleur.h" />
-    <ClInclude Include="include.h" />
-    <ClInclude Include="jeu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

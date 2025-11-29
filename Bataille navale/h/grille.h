@@ -18,8 +18,16 @@ class grille {
 			return lagrille[index];
 		}
 
+<<<<<<< Updated upstream
 		const vector<vector<char>>& getGrille() const;
 };
 
 //declaration de la surchage pour afficher la grille 
 ostream& operator<<(ostream& os, const grille g);
+=======
+		void print(std::ostream& os) const;  // MÉTHODE D’AFFICHAGE
+
+		// surcharge <<
+		friend std::ostream& operator<<(std::ostream& os, const grille& g);
+};
+>>>>>>> Stashed changes

@@ -12,7 +12,7 @@ int main() {
 
 	//initialisation des grilles
 	//G1 humain tire robot place 
-	//G1 robot tire humain place 
+	//G2 robot tire humain place 
 
 	grille G1 = grille();
 	grille G2 = grille();
@@ -22,7 +22,12 @@ int main() {
 	while (fini = false) {
 
 		vector<grille> vec = { G1,G2 };
+<<<<<<< Updated upstream
 		//vec = jouer(G1, G2);
+=======
+		vec = jouer(G1, G2);
+		cout << vec[1] << endl;
+>>>>>>> Stashed changes
 
 	}
 

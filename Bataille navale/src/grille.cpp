@@ -13,6 +13,7 @@ grille::grille() {
 	}
 }
 
+<<<<<<< Updated upstream
 const vector<vector<char>>& grille::getGrille() const {
 	return lagrille;
 }
@@ -32,6 +33,19 @@ ostream& operator<<(ostream& os, const grille g) {
 		os << "\n";
 	}
 
+=======
+void grille::print(std::ostream& os) const {
+	for (const auto& row : data) {
+		for (char c : row) {
+			os << '[' << c << ']';
+		}
+		os << '\n';
+	}
+}
+
+std::ostream& operator<<(std::ostream& os, const grille& g) {
+	g.print(os);
+>>>>>>> Stashed changes
 	return os;
 }
 

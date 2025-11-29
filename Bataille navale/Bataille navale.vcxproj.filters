@@ -71,6 +71,12 @@
     <ClInclude Include="h\torpilleur.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="include.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+>>>>>>> Stashed changes
     <ClInclude Include="h\jeu.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>

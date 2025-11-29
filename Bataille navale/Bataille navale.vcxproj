@@ -116,7 +116,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< Updated upstream
       <AdditionalIncludeDirectories>C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\h;C:\Users\elman\OneDrive\Documents\GitHub\Bataille-navale\Bataille navale\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> Stashed changes
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,6 +164,10 @@
     <ClInclude Include="h\porte-avion.h" />
     <ClInclude Include="h\sous-marin.h" />
     <ClInclude Include="h\torpilleur.h" />
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="include.h" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

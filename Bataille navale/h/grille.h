@@ -5,10 +5,10 @@
 using namespace std;
 
 class grille {
-	protected:
-		vector<vector<char>> lagrille;
-	public:
-		grille();
+private:
+	vector<vector<char>> lagrille;
+public:
+	grille() :lagrille(10, vector<char>(10, '~')) {}  // Initialisation de la grille avec des '~'
 
 		// Ajout de l'operateur [] pour acc�der � lagrille comme un tableau 2D
 		vector<char>& operator[](size_t index) {

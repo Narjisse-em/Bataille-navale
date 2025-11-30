@@ -152,10 +152,10 @@
     <ClCompile Include="src\torpilleur.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="h\bateau.h" />
+    <ClInclude Include="bateau.h" />
+    <ClInclude Include="grille.h" />
     <ClInclude Include="h\contre-torpilleur.h" />
     <ClInclude Include="h\croiseur.h" />
-    <ClInclude Include="h\grille.h" />
     <ClInclude Include="h\jeu.h" />
     <ClInclude Include="h\porte-avion.h" />
     <ClInclude Include="h\sous-marin.h" />

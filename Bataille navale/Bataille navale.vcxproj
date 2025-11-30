@@ -142,7 +142,6 @@
   <ItemGroup>
     <ClCompile Include="grille.cpp" />
     <ClCompile Include="jeu.cpp" />
-    <ClCompile Include="initialisation.cpp" />
     <ClCompile Include="bateau.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

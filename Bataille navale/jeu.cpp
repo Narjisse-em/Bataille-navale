@@ -78,7 +78,7 @@ static vector<grille> jouer(grille G1, grille G2) {
 		int yA = dist(gen);
 
 		if (G2[xA][yA] == 'X' || G2[xA][yA] == 'O') {
-			i == 1;
+			i = 1;
 		}
 
 		else {

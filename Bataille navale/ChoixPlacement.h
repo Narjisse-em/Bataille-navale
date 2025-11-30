@@ -1,0 +1,19 @@
+#pragma once
+#include <string>
+using namespace std;
+
+struct ChoixPlacement {
+private:    
+    string type;       // P, T, CR, CT, S
+    int x;
+    int y;
+    char orientation;  // H ou V
+public:
+	//getteurs
+	string getType() const { return type; }
+	int getX() const { return x; }
+	int getY() const { return y; }
+	char getOrientation() const { return orientation; }
+
+	void lire_placement();
+    };

@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ChoixPlacement.cpp" />
     <ClCompile Include="grille.cpp" />
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="bateau.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bateau.h" />
+    <ClInclude Include="ChoixPlacement.h" />
     <ClInclude Include="contretorpilleur.h" />
     <ClInclude Include="croiseur.h" />
     <ClInclude Include="grille.h" />

@@ -1,5 +1,6 @@
 ﻿#include "grille.h"
 #include "bateau.h"
+#include "ChoixPlacement.h"
 #include <vector>
 
 bool placement_valide(const grille& g, int x, int y, char orientation, bateau& b)
@@ -37,4 +38,32 @@ bool placement_valide(const grille& g, int x, int y, char orientation, bateau& b
 
 	//si aucune erreur, le placement est valide
 	return true; //placement valide
+}
+
+struct ChoixPlacement {
+    int type;          // 1=PA, 2=Croiseur, 3=Contre-torpilleur, 4=Sous-marin, 5=Torpilleur
+    int x;
+    int y;
+    char orientation;  // 'H' ou 'V'
+};
+
+
+
+//fonction pour placer le bateau à la main une fois que sa position est valide
+void placer_bateau(grille& g, int x, int y, char orientation, bateau& b)
+{
+    orientation = toupper(orientation);
+    int L = b.getL();
+    char S = b.getSymbole();
+
+    if (orientation == 'H') {
+        for (int i = 0; i < L; i++) {
+            g[y][x + i] = S;
+        }
+    }
+    else { // orientation == 'V'
+        for (int i = 0; i < L; i++) {
+            g[y + i][x] = S;
+        }
+    }
 }

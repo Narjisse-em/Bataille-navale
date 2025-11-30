@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<vector>
 #include<ctime>
 
@@ -10,15 +10,16 @@
 #include "sousmarin.h"
 #include "torpilleur.h"
 #include "jeu.h"
+#include "utilities.cpp"
 
 using namespace std;
 
 int main() {
 
-	//initialise le générateur aléatoire pour placer les bateaux
+	//initialise le gÃ©nÃ©rateur alÃ©atoire pour placer les bateaux
 	srand(time(NULL));
 
-	//placements aléatoires dans la grille adverse
+	//placements alÃ©atoires dans la grille adverse
 	grille g1;
 
 	porteavion p;
@@ -34,14 +35,18 @@ int main() {
 	t.placement(g1);
 
 
-	cout << "Grille avec les bateaux placés :" << endl;
+	cout << "Grille avec les bateaux placÃ©s :" << endl;
 	cout<<g1<< endl;
 
 
-	//placements à la main dans la grille du joueur
+	//placements Ã  la main dans la grille du joueur
 	grille g2;
+
+
+
+	if (placement_valide(g2, int x, int y, oriantation, b))
 	p.placement(g2);
-	cout << "Grille du joueur avec les bateaux placés :" << endl;
+	cout << "Grille du joueur avec les bateaux placÃ©s :" << endl;
 
 	//fin du programme
 	return 0;

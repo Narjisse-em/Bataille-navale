@@ -4,11 +4,6 @@
 
 #include "grille.h"
 #include "bateau.h"
-#include "contretorpilleur.h"
-#include "croiseur.h"
-#include "porteavion.h"
-#include "sousmarin.h"
-#include "torpilleur.h"
 #include "jeu.h"
 #include "utilities.h"
 #include "ChoixPlacement.h"

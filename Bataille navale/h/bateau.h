@@ -2,9 +2,9 @@
 
 class bateau {
 	protected:
-		double x, y;
-		int place;
-		int x_touche, y_touche;
+		int longueur;
+		char symbole;
+
 	public:
-		void placement();
+		bateau(int L, char S) :longueur(L), symbole(S) {};
 }; 

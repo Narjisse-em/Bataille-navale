@@ -140,13 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="grille.cpp" />
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="initialisation.cpp" />
     <ClCompile Include="bateau.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\contre-torpilleur.cpp" />
     <ClCompile Include="src\croiseur.cpp" />
-    <ClCompile Include="src\grille.cpp" />
     <ClCompile Include="src\porte-avion.cpp" />
     <ClCompile Include="src\sous-marin.cpp" />
     <ClCompile Include="src\torpilleur.cpp" />
@@ -154,12 +154,12 @@
   <ItemGroup>
     <ClInclude Include="bateau.h" />
     <ClInclude Include="contretorpilleur.h" />
+    <ClInclude Include="croiseur.h" />
     <ClInclude Include="grille.h" />
-    <ClInclude Include="h\croiseur.h" />
-    <ClInclude Include="h\jeu.h" />
-    <ClInclude Include="h\porte-avion.h" />
-    <ClInclude Include="h\sous-marin.h" />
-    <ClInclude Include="h\torpilleur.h" />
+    <ClInclude Include="jeu.h" />
+    <ClInclude Include="porteavion.h" />
+    <ClInclude Include="sousmarin.h" />
+    <ClInclude Include="torpilleur.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

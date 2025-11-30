@@ -3,5 +3,5 @@
 
 class torpilleur :public bateau {
 public:
-	torpilleur():bateau(2,'T'){}	
+	torpilleur() :bateau(2, 'T') {}
 };

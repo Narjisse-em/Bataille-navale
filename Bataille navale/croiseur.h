@@ -4,5 +4,5 @@
 class croiseur :public bateau {
 	int place = 4;
 public:
-	croiseur():bateau(4,'C'){}
+	croiseur() :bateau(4, 'C') {}
 };

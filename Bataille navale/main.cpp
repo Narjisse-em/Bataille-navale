@@ -3,8 +3,8 @@
 #include "bateau.h"
 #include "contretorpilleur.h"
 #include "croiseur.h"
-#include "porte-avion.h"
-#include "sous-marin.h"
+#include "porteavion.h"
+#include "sousmarin.h"
 #include "torpilleur.h"
 #include "jeu.h"
 

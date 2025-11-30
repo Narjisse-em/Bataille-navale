@@ -51,18 +51,18 @@ int main() {
 	bool type_invalide=true ;
 	while(type_invalide){
 		if (choix.getType() == "P") {  L = 5;  symbole = 'P'; type_invalide=false; }
-		else if (choix.getType() == "CR") { L = 4; symbole = 'CR'; type_invalide=false; }
-		else if (choix.getType() == "CT") { L = 3; symbole = 'CT'; type_invalide=false; }
+		else if (choix.getType() == "CR") { L = 4; symbole = 'C'; type_invalide=false; }
+		else if (choix.getType() == "CT") { L = 3; symbole = 'K'; type_invalide=false; }
 		else if (choix.getType() == "S") { L = 3; symbole = 'S'; type_invalide=false; }
 		else if (choix.getType() == "T") { L = 2; symbole = 'T'; type_invalide = false; }
 		
 		else {cout << "Type de bateau invalide ! Veuillez entrer un type valide (P, CR, CT, S, T) :" << endl;
-			choix=choix.lire_placement();
+		 choix = ChoixPlacement::lire_placement();
 		}
 	}
 	
 	if (placement_valide(g2, choix.getX(), choix.getY(), choix.getOrientation(), L)) {
-		placer_bateau(g2, choix.getX(), choix.getY(), L, choix.getOrientation(), S);
+		placer_bateau(g2, choix.getX(), choix.getY(), L, choix.getOrientation(), symbole);
 		cout << "Placement réussi !" << endl;
 	}
 	else {

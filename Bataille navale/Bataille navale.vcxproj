@@ -145,7 +145,7 @@
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="bateau.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="utilities.h" />
+    <ClCompile Include="utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bateau.h" />
@@ -157,6 +157,7 @@
     <ClInclude Include="porteavion.h" />
     <ClInclude Include="sousmarin.h" />
     <ClInclude Include="torpilleur.h" />
+    <ClInclude Include="utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

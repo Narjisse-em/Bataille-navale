@@ -1,4 +1,7 @@
 #include<iostream>
+#include<vector>
+#include<ctime>
+
 #include "grille.h"
 #include "bateau.h"
 #include "contretorpilleur.h"
@@ -8,22 +11,40 @@
 #include "torpilleur.h"
 #include "jeu.h"
 
+using namespace std;
+
 int main() {
 
-	//initialisation des grilles
-	//G1 humain tire robot place 
-	//G1 robot tire humain place 
+	//initialise le générateur aléatoire pour placer les bateaux
+	srand(time(NULL));
 
-	grille G1 = grille();
-	grille G2 = grille();
+	grille g;
+
+	porteavion p;
+	croiseur c;	
+	contretorpilleur ct;
+	sousmarin s;
+	torpilleur t;
+
+	p.placement(g);
+	c.placement(g);
+	ct.placement(g);
+	s.placement(g);
+	t.placement(g);
+
+
+	cout << "Grille avec les bateaux placés :" << endl;
+	cout<<g<< endl;
+
+	//fin du programme
+	return 0;
+
 
 	bool fini = false;
 
 	while (fini = false) {
 
-		vector<grille> vec = { G1,G2 };
-		//vec = jouer(G1, G2);
-
+		
 	}
 
 

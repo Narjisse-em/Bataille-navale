@@ -18,7 +18,8 @@ int main() {
 	//initialise le générateur aléatoire pour placer les bateaux
 	srand(time(NULL));
 
-	grille g;
+	//placements aléatoires dans la grille adverse
+	grille g1;
 
 	porteavion p;
 	croiseur c;	
@@ -26,15 +27,21 @@ int main() {
 	sousmarin s;
 	torpilleur t;
 
-	p.placement(g);
-	c.placement(g);
-	ct.placement(g);
-	s.placement(g);
-	t.placement(g);
+	p.placement(g1);
+	c.placement(g1);
+	ct.placement(g1);
+	s.placement(g1);
+	t.placement(g1);
 
 
 	cout << "Grille avec les bateaux placés :" << endl;
-	cout<<g<< endl;
+	cout<<g1<< endl;
+
+
+	//placements à la main dans la grille du joueur
+	grille g2;
+	p.placement(g2);
+	cout << "Grille du joueur avec les bateaux placés :" << endl;
 
 	//fin du programme
 	return 0;

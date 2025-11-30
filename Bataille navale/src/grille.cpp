@@ -17,6 +17,11 @@ const vector<vector<char>>& grille::getGrille() const {
 	return lagrille;
 }
 
+ostream& operator<<(ostream& os, const grille& g)
+{
+	// TODO: insérer une instruction return ici
+}
+
 ostream& operator<<(ostream& os, const grille g) {
 	const auto& m = g.getGrille();
 

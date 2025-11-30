@@ -18,8 +18,8 @@ ChoixPlacement ChoixPlacement::lire_placement(){
     cout << "   - la colonne (x)\n";
     cout << "   - l'orientation : H (horizontal) ou V (vertical)\n\n";
 
-    cout << "Exemple : 4 1 V\n";
-    cout << " → place un bateau qui part de (x=1, y=4) vers le bas.\n\n";
+    cout << "Exemple : CR 4 1 V\n";
+    cout << " → place un Croiseur qui part de (x=1, y=4) vers le bas.\n\n";
 
     cout << "IMPORTANT :\n";
     cout << " - Le bateau doit tenir entier dans la grille.\n";

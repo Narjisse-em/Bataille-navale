@@ -150,14 +150,9 @@
   <ItemGroup>
     <ClInclude Include="bateau.h" />
     <ClInclude Include="ChoixPlacement.h" />
-    <ClInclude Include="contretorpilleur.h" />
-    <ClInclude Include="croiseur.h" />
     <ClInclude Include="grille.h" />
     <ClInclude Include="jeu.h" />
-    <ClInclude Include="porteavion.h" />
-    <ClInclude Include="sousmarin.h" />
     <ClInclude Include="Tir.h" />
-    <ClInclude Include="torpilleur.h" />
     <ClInclude Include="utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

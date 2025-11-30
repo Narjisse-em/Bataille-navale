@@ -18,36 +18,36 @@ using namespace std;
 
 int main() {
 
-	//initialise le générateur aléatoire pour placer les bateaux
-	srand(time(NULL));
+    // Initialisation du générateur aléatoire
+    srand(static_cast<unsigned int>(time(NULL)));
 
-	//placements aléatoires dans la grille adverse
-	grille g1;
+	// placement aléatoire des bateaux de l'adversaire
+    grille g1;
 
-	porteavion PA;
-	croiseur CR;	
-	contretorpilleur CT;
-	sousmarin S;
-	torpilleur T;
-
-	PA.placement(g1);
-	CR.placement(g1);
-	CT.placement(g1);
-	S.placement(g1);
-	T.placement(g1);
+    bateau PA(5, 'P');  // porte-avion
+    bateau CR(4, 'C');  // croiseur
+    bateau CT(3, 'K');  // contre-torpilleur
+    bateau S(3, 'S');  // sous-marin (j'évite le nom S ⚠️ qui est déjà utilisé pour srand)
+    bateau T(2, 'T');  // torpilleur
 
 
-	cout << "Grille avec les bateaux placés :" << endl;
-	cout<<g1<< endl;
+    // Placement automatique des bateaux adverses
+    PA.placement(g1);
+    CR.placement(g1);
+    CT.placement(g1);
+    S.placement(g1);
+    T.placement(g1);
+
+    cout << "Grille de l'adversaire (debug) :" << endl;
+    cout << g1 << endl;
 
 
-	
 
+	// placement du jouer à la main
 
-// Grille du joueur
     grille g2;
 
-    // Compteurs : 1 bateau de chaque type
+    // Un seul exemplaire de chaque bateau
     int restant_P = 1;
     int restant_CR = 1;
     int restant_CT = 1;
@@ -59,7 +59,7 @@ int main() {
     while (total_a_placer > 0)
     {
         cout << "\n=============================================\n";
-        cout << "       PLACEMENT DE VOS BATEAUX" << endl;
+        cout << "            PLACEMENT DE VOS BATEAUX\n";
         cout << "=============================================\n";
 
         cout << "Bateaux restants :" << endl;
@@ -72,10 +72,10 @@ int main() {
         cout << "\nGrille actuelle :" << endl;
         cout << g2 << endl;
 
-        // Lire un placement
+        // Lecture saisie utilisateur
         ChoixPlacement choix = ChoixPlacement::lire_placement();
 
-        // Vérifier que ce type reste à placer
+        // Vérification qu'on n'essaie pas de placer un type déjà utilisé
         bool deja_place = false;
 
         if (choix.getType() == "P" && restant_P == 0) deja_place = true;
@@ -85,11 +85,11 @@ int main() {
         if (choix.getType() == "T" && restant_T == 0) deja_place = true;
 
         if (deja_place) {
-            cout << "Vous avez déjà placé ce type de bateau !\n";
+            cout << "Vous avez déjà placé ce type de bateau.\n";
             continue;
         }
 
-        // Déterminer longueur et symbole
+        // Détermination de la longueur et du symbole associé
         int L = 0;
         char symbole = '?';
 
@@ -99,18 +99,17 @@ int main() {
         if (choix.getType() == "S") { L = 3; symbole = 'S'; }
         if (choix.getType() == "T") { L = 2; symbole = 'T'; }
 
-        // Vérifier validité
+        // Vérification avant placement
         if (!placement_valide(g2, choix.getX(), choix.getY(), choix.getOrientation(), L)) {
-            cout << "Placement impossible : hors grille OU chevauchement !\n";
+            cout << "Placement impossible (chevauchement ou hors grille)." << endl;
             continue;
         }
 
-        // Placer
+        // Placement effectif
         placer_bateau(g2, choix.getX(), choix.getY(), L, choix.getOrientation(), symbole);
+        cout << "Bateau place avec succes.\n";
 
-        cout << "==> Bateau place !" << endl;
-
-        // Décrémente le bon compteur
+        // Mise à jour du compteur
         if (choix.getType() == "P")  restant_P--;
         if (choix.getType() == "CR") restant_CR--;
         if (choix.getType() == "CT") restant_CT--;
@@ -123,34 +122,35 @@ int main() {
     cout << "\n====== VOTRE GRILLE FINALE ======\n";
     cout << g2 << endl;
 
-    bool fini = false;
+
+	//fin de l'initialisation -> on passe à la boucle de tir
 
     cout << "\n===== DEBUT DU COMBAT ! =====\n";
 
-    grille vueOrdi;       // ce que le joueur voit de l’ordinateur
-    grille vueJoueur;     // ce que l’ordinateur voit du joueur
-    // initialisés avec '~'
+    grille vueOrdi;     // ce que VOUS voyez de la grille adverse
+    grille vueJoueur;   // ce que l’ORDI sait de votre grille
+
+    bool fini = false;
 
     while (!fini)
     {
-        cout << "\n----- Votre tir -----\n";
+		// tour du joueur
+        cout << "\n=========== VOTRE TOUR ===========\n";
 
-        // 1. Le joueur tire
         Tir tirJ = lire_tir_joueur();
-
         ResultatTir res = evaluer_tir(g1, tirJ.x, tirJ.y);
 
-        if (res == A_L_EAU) cout << "A L'EAU !\n";
-        if (res == TOUCHE)  cout << "TOUCHE !\n";
-        if (res == COULE)   cout << "COULE !\n";
+        if (res == A_L_EAU)  cout << "A L'EAU.\n";
+        if (res == TOUCHE)   cout << "TOUCHE !\n";
+        if (res == COULE)    cout << "COULE !\n";
 
-        // Mettre à jour la vue du joueur
+        // Mise à jour de la vue
         vueOrdi[tirJ.y][tirJ.x] = g1[tirJ.y][tirJ.x];
 
-        cout << "Votre vue de l'adversaire :\n" << vueOrdi;
+        cout << "\n--- Votre vue de l’adversaire ---\n";
+        cout << vueOrdi << endl;
 
-
-        // 2. Vérifier si l'ordinateur a perdu
+        // Vérification si l’ordi a perdu
         bool ordi_mort = true;
         for (int i = 0; i < 10; i++)
             for (int j = 0; j < 10; j++)
@@ -158,25 +158,33 @@ int main() {
                     ordi_mort = false;
 
         if (ordi_mort) {
-            cout << "\n=== VICTOIRE ! Vous avez coulé toute la flotte adverse ! ===\n";
+            cout << "\n=== VICTOIRE ! Toute la flotte adverse est coulee. ===\n";
             break;
         }
 
 
-        // ------- Tir de l’ordinateur -------
-        cout << "\n----- Tir de l'ordinateur -----\n";
+        // tour de l'ordinateur
+        cout << "\n=========== TOUR DE L’ORDINATEUR ===========\n";
 
         Tir tirO = tir_ordi(vueJoueur);
 
+        cout << "L’ordinateur tire en : (" << tirO.x << ", " << tirO.y << ")\n";
+
         ResultatTir res2 = evaluer_tir(g2, tirO.x, tirO.y);
 
-        if (res2 == A_L_EAU) cout << "L'ordinateur a tire dans l'eau.\n";
-        if (res2 == TOUCHE)  cout << "L'ordinateur vous a touche !\n";
-        if (res2 == COULE)   cout << "L'ordinateur a coule un de vos bateaux !\n";
+        if (res2 == A_L_EAU)  cout << "L’ordinateur a rate." << endl;
+        if (res2 == TOUCHE)   cout << "L’ordinateur vous a touche." << endl;
+        if (res2 == COULE)    cout << "L’ordinateur a coule un de vos bateaux !" << endl;
 
         vueJoueur[tirO.y][tirO.x] = g2[tirO.y][tirO.x];
 
+        cout << "\n--- Votre grille (avec impacts) ---\n";
+        cout << g2 << endl;
 
+        cout << "\n--- Ce que l’ordi sait de votre grille ---\n";
+        cout << vueJoueur << endl;
+
+        // Vérification si le joueur a perdu
         bool joueur_mort = true;
         for (int i = 0; i < 10; i++)
             for (int j = 0; j < 10; j++)
@@ -184,14 +192,10 @@ int main() {
                     joueur_mort = false;
 
         if (joueur_mort) {
-            cout << "\n=== DÉFAITE ! Votre flotte est détruite... ===\n";
+            cout << "\n=== DEFAITE ! Votre flotte est detruite. ===\n";
             break;
         }
     }
 
-
-
-
-	//fin du programme
-	return 0;
+    return 0;
 }

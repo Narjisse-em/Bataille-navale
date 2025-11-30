@@ -145,7 +145,7 @@
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="bateau.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="utilities.cpp" />
+    <ClCompile Include="utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bateau.h" />

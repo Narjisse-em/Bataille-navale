@@ -15,5 +15,5 @@ public:
 	int getY() const { return y; }
 	char getOrientation() const { return orientation; }
 
-	void lire_placement();
+	static ChoixPlacement lire_placement();
     };

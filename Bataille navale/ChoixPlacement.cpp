@@ -3,8 +3,7 @@
 using namespace std;
 
 
-void ChoixPlacement::lire_placement()
-{
+ChoixPlacement ChoixPlacement::lire_placement(){
     ChoixPlacement choix;
 
 
@@ -31,37 +30,5 @@ void ChoixPlacement::lire_placement()
     // Mise en forme
     for (char& c : choix.type) c = toupper(c);
     choix.orientation = toupper(choix.orientation);
-
-    // Vérification du type
-    while (choix.type != "P" &&
-        choix.type != "T" &&
-        choix.type != "CR" &&
-        choix.type != "CT" &&
-        choix.type != "S")
-    {
-        cout << "Type invalide. Reessayez (P, T, CR, CT, S) : ";
-        cin >> choix.type;
-        for (char& c : choix.type) c = toupper(c);
-    }
-
-    // Vérification X
-    while (choix.x < 0 || choix.x > 9) {
-        cout << "x doit etre entre 0 et 9. Reessayez : ";
-        cin >> choix.x;
-    }
-
-    // Vérification Y
-    while (choix.y < 0 || choix.y > 9) {
-        cout << "y doit etre entre 0 et 9. Reessayez : ";
-        cin >> choix.y;
-    }
-
-    // Vérification orientation
-    while (choix.orientation != 'H' && choix.orientation != 'V') {
-        cout << "Tapez H ou V : ";
-        cin >> choix.orientation;
-        choix.orientation = toupper(choix.orientation);
-    }
-
     return choix;
 }

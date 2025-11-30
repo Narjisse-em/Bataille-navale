@@ -10,7 +10,8 @@
 #include "sousmarin.h"
 #include "torpilleur.h"
 #include "jeu.h"
-#include "utilities.cpp"
+#include "utilities.h"
+#include "ChoixPlacement.h"
 
 using namespace std;
 
@@ -22,17 +23,17 @@ int main() {
 	//placements aléatoires dans la grille adverse
 	grille g1;
 
-	porteavion p;
-	croiseur c;	
-	contretorpilleur ct;
-	sousmarin s;
-	torpilleur t;
+	porteavion PA;
+	croiseur CR;	
+	contretorpilleur CT;
+	sousmarin S;
+	torpilleur T;
 
-	p.placement(g1);
-	c.placement(g1);
-	ct.placement(g1);
-	s.placement(g1);
-	t.placement(g1);
+	PA.placement(g1);
+	CR.placement(g1);
+	CT.placement(g1);
+	S.placement(g1);
+	T.placement(g1);
 
 
 	cout << "Grille avec les bateaux placés :" << endl;
@@ -41,24 +42,33 @@ int main() {
 
 	//placements à la main dans la grille du joueur
 	grille g2;
+	ChoixPlacement choix = ChoixPlacement::lire_placement();
 
+	// déterminer longueur + symbole selon type
 
-
-	if (placement_valide(g2, int x, int y, oriantation, b))
-	p.placement(g2);
-	cout << "Grille du joueur avec les bateaux placés :" << endl;
-
-	//fin du programme
-	return 0;
-
-
-	bool fini = false;
-
-	while (fini = false) {
-
-		
+	int L = 0;
+	char S = ' ';
+	bool type_invalide=true ;
+	while(type_invalide){
+		if (choix.getType() == "P") {  L = 5;  S = 'P'; type_invalide=false; }
+		else if (choix.getType() == "CR") {  L = 4;  S = 'C'; type_invalide = false; }
+		else if (choix.getType() == "CT") {  L = 3;  S = 'K'; type_invalide = false;}
+		else if (choix.getType() == "S") {  L = 3;  S = 'S'; type_invalide = false;}
+		else if (choix.getType() == "T") {  L = 2;  S = 'T'; type_invalide = false;}
+		else {cout << "Type de bateau invalide ! Veuillez entrer un type valide (P, CR, CT, S, T) :" << endl;
+			choix=choix.lire_placement();
+		}
+	}
+	
+	if (placement_valide(g2, choix.getX(), choix.getY(), choix.getOrientation(), L)) {
+		placer_bateau(g2, choix.getX(), choix.getY(), L, choix.getOrientation(), S);
+		cout << "Placement réussi !" << endl;
+	}
+	else {
+		cout << "Placement invalide !" << endl;
 	}
 
 
-
+	//fin du programme
+	return 0;
 }

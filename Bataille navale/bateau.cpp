@@ -1,12 +1,9 @@
-
-
 #include<iostream>
 #include <cstdlib>
 #include "bateau.h"
 #include "grille.h"
 using namespace std;
 
-#include "include.h"
 
 void bateau::placement() {
 	int length;

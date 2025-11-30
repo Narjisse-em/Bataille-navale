@@ -1,6 +1,7 @@
 #pragma once
+#include "bateau.h"
+
 class porteavion :public bateau {
-	int place = 5;
 public:
-	void decrem() { place -= 1; }
+	porteavion():bateau(5,'P'){} //P = Porte-avion
 };

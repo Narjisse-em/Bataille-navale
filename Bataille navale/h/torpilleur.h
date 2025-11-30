@@ -1,8 +1,7 @@
 #pragma once
+#include "bateau.h"
 
 class torpilleur :public bateau {
-	int place=5;
 public:
-	void decrem() { place -= 1; }
-	
+	torpilleur():bateau(2,'T'){}	
 };

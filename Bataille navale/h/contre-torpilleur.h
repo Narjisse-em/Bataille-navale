@@ -1,7 +1,7 @@
 #pragma once
+#include "bateau.h"
 
 class contretorpilleur :public bateau {
-	int place = 3;
 public:
-	void decrem() { place -= 1; }
+	contretorpilleur() :bateau(3, 'K') {} //K=contretorpilleur
 };

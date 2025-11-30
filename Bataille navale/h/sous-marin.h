@@ -1,6 +1,6 @@
 #pragma once
+#include "bateau.h"
 class sousmarin :public bateau {
-	int place = 3;
 public:
-	void decrem() { place -= 1; }
+	sousmarin() :bateau(3, 'S') {} //S = Sous-marin
 };

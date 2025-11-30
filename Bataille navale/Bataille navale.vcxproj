@@ -145,11 +145,6 @@
     <ClCompile Include="initialisation.cpp" />
     <ClCompile Include="bateau.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\contre-torpilleur.cpp" />
-    <ClCompile Include="src\croiseur.cpp" />
-    <ClCompile Include="src\porte-avion.cpp" />
-    <ClCompile Include="src\sous-marin.cpp" />
-    <ClCompile Include="src\torpilleur.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bateau.h" />

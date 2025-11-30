@@ -2,10 +2,10 @@
 
 #include "grille.h"
 #include "bateau.h"
-#include "contre-torpilleur.h"
+#include "contretorpilleur.h"
 #include "croiseur.h"
-#include "porte-avion.h"
-#include "sous-marin.h"
+#include "porteavion.h"
+#include "sousmarin.h"
 #include "torpilleur.h"
 #include "jeu.h"
 
@@ -67,18 +67,18 @@ static vector<grille> jouer(grille G1, grille G2) {
 
 	//tour de l'ordi 
 	//G2 = grille où l'ordi tire avec bateaux de l'humain
-	
+
 
 
 	while (i == 1) {
 
-		
+
 
 		int xA = dist(gen);
 		int yA = dist(gen);
 
 		if (G2[xA][yA] == 'X' || G2[xA][yA] == 'O') {
-				i==1;
+			i == 1;
 		}
 
 		else {
@@ -99,7 +99,7 @@ static vector<grille> jouer(grille G1, grille G2) {
 		}
 		break;
 	}
-	return {G1, G2};
-	
+	return { G1, G2 };
+
 }
 

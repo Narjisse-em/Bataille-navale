@@ -1,4 +1,5 @@
 #pragma once
+#include "grille.h"
 
 class bateau {
 protected:
@@ -7,4 +8,5 @@ protected:
 
 public:
 	bateau(int L, char S) :longueur(L), symbole(S) {};
+	void placement(grille& g);
 };

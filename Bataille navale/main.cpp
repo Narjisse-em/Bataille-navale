@@ -1,7 +1,7 @@
 #include<iostream>
 #include "grille.h"
 #include "bateau.h"
-#include "contre-torpilleur.h"
+#include "contretorpilleur.h"
 #include "croiseur.h"
 #include "porte-avion.h"
 #include "sous-marin.h"

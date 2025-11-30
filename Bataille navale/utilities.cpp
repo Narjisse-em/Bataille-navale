@@ -54,3 +54,57 @@ void placer_bateau(grille& g, int x, int y, int L, char orientation, char symbol
 	}
 }
 
+Tir lire_tir_joueur() {
+	Tir tir;
+	cout << "Entrez une position de tir (x y) entre 0 et 9 : ";
+	cin >> tir.x >> tir.y;
+
+	while (tir.x < 0 || tir.x > 9 || tir.y < 0 || tir.y > 9) {
+		cout << "Coordonnees invalides ! Reessayez (x y) : ";
+		cin >> tir.x >> tir.y;
+	}
+
+	return tir;
+}
+
+
+ResultatTir evaluer_tir(grille& g, int x, int y) {
+
+	char& c = g[y][x];
+
+	if (c == '~') {            // vide
+		c = 'O';               // tir dans l'eau
+		return A_L_EAU;
+	}
+	else if (c == 'O' || c == 'X') {
+		// déjà tiré -> pas d'effet
+		return A_L_EAU;
+	}
+	else {
+		// On a une lettre de bateau
+		c = 'X';
+
+		// Vérifier si le bateau est coulé
+		// → vérifier si une case du même type existe encore
+		char bateau = c;
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				if (g[i][j] == bateau)
+					return TOUCHE;
+			}
+		}
+		return COULE;
+	}
+}
+
+//ordinateur adverse qui tire au hasard mais ne doit pas tirer 2 fois au même endroit!
+Tir tir_ordi(const grille& vue) {
+	Tir t;
+	do {
+		t.x = rand() % 10;
+		t.y = rand() % 10;
+	} while (vue[t.y][t.x] == 'O' || vue[t.y][t.x] == 'X');
+
+	return t;
+}
+

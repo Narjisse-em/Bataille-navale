@@ -30,11 +30,11 @@
     <ClCompile Include="jeu.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="utilities.h">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="ChoixPlacement.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

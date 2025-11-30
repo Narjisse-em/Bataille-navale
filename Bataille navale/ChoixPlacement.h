@@ -4,11 +4,12 @@ using namespace std;
 
 struct ChoixPlacement {
 private:    
-    string type;       // P, T, CR, CT, S
-    int x;
-    int y;
-    char orientation;  // H ou V
+    string type="";       // P, T, CR, CT, S
+    int x=0;
+    int y=0;
+    char orientation='H';  // H ou V
 public:
+
 	//getteurs
 	string getType() const { return type; }
 	int getX() const { return x; }

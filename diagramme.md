@@ -1,3 +1,6 @@
+# Diagramme de classe UML
+
+```mermaid
 classDiagram
 
 class grille {
@@ -43,11 +46,12 @@ class utilities {
 }
 
 class ResultatTir {
-    <<enum>>
+    <<enumeration>>
     A_L_EAU
     TOUCHE
     COULE
 }
+
 
 main --> ChoixPlacement : utilise
 main --> grille : utilise

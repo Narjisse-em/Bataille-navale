@@ -4,7 +4,6 @@
 
 #include "grille.h"
 #include "bateau.h"
-#include "jeu.h"
 #include "utilities.h"
 #include "ChoixPlacement.h"
 #include "Tir.h"

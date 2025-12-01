@@ -142,7 +142,6 @@
   <ItemGroup>
     <ClCompile Include="ChoixPlacement.cpp" />
     <ClCompile Include="grille.cpp" />
-    <ClCompile Include="jeu.cpp" />
     <ClCompile Include="bateau.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="utilities.cpp" />
@@ -151,7 +150,6 @@
     <ClInclude Include="bateau.h" />
     <ClInclude Include="ChoixPlacement.h" />
     <ClInclude Include="grille.h" />
-    <ClInclude Include="jeu.h" />
     <ClInclude Include="Tir.h" />
     <ClInclude Include="utilities.h" />
   </ItemGroup>

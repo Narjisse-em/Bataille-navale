@@ -1,10 +1,11 @@
 ```mermaid
-
 stateDiagram-v2
+direction LR
 
 [*] --> PlacementBateaux
 
 state PlacementBateaux {
+    direction LR
     [*] --> EnCoursPlacement
     EnCoursPlacement --> EnCoursPlacement : placement invalide
     EnCoursPlacement --> PlacementValide : placement OK
@@ -18,6 +19,7 @@ TourJoueur --> TirJoueur
 TirJoueur --> AnalyseResultatJoueur
 
 state AnalyseResultatJoueur {
+    direction LR
     [*] --> EauJoueur
     EauJoueur --> FinAnalyseJoueur
     [*] --> ToucheJoueur
@@ -33,6 +35,7 @@ TourOrdi --> TirOrdi
 TirOrdi --> AnalyseResultatOrdi
 
 state AnalyseResultatOrdi {
+    direction LR
     [*] --> EauOrdi
     EauOrdi --> FinAnalyseOrdi
     [*] --> ToucheOrdi

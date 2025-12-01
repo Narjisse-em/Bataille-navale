@@ -9,6 +9,12 @@
 #include "ChoixPlacement.h"
 #include "Tir.h"
 
+#include"contretorpilleur.h"
+#include"croiseur.h"
+#include"porteavion.h"
+#include"sousmarin.h"
+#include"torpilleur.h"
+
 using namespace std;
 
 int main() {
@@ -19,11 +25,11 @@ int main() {
 	// placement aléatoire des bateaux de l'adversaire
     grille g1;
 
-    bateau PA(5, 'P');  // porte-avion
-    bateau CR(4, 'C');  // croiseur
-    bateau CT(3, 'K');  // contre-torpilleur
-    bateau S(3, 'S');  // sous-marin (j'évite le nom S ⚠️ qui est déjà utilisé pour srand)
-    bateau T(2, 'T');  // torpilleur
+    porteavion PA;  // porte-avion
+    croiseur CR;  // croiseur
+    contretorpilleur CT;  // contre-torpilleur
+    sousmarin S;  // sous-marin (j'évite le nom S ⚠️ qui est déjà utilisé pour srand)
+    torpilleur T;  // torpilleur
 
 
     // Placement automatique des bateaux adverses

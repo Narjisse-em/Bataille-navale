@@ -19,19 +19,27 @@ int main() {
     grille g1;
 
     bateau PA=bateau(5,'P');  // porte-avion
-    bateau CR=bateau(4,'P');  // porte-avion
-    bateau CT=bateau(3,'P');  // porte-avion
-    bateau S=bateau(3,'P');  // porte-avion
-    bateau T=bateau(2,'P');  // porte-avion
+    bateau CR=bateau(4,'C');  // croiseur
+    bateau CT=bateau(3,'K');  // contre-torpilleur
+    bateau S=bateau(3,'S');  // sous-marin
+    bateau T=bateau(2,'T');  // torpilleur
+    vector<bateau> bateaux = {PA, CR, CT, S, T};
 
+    for (bateau elt : bateaux) {
+        bool place = false;
+        while (!place)
+        {
+            int x = rand() % 10;
+            int y = rand() % 10;
+            char orientation = (rand() % 2 == 0) ? 'H' : 'V';
+            int L = elt.getL();
 
-    // Placement automatique des bateaux adverses
-    PA.placement(g1);
-    CR.placement(g1);
-    CT.placement(g1);
-    S.placement(g1);
-    T.placement(g1);
-
+            if (placement_valide(g1, x, y, orientation, L)) {
+                place = true;
+                placer_bateau(g1, x, y, L, orientation, elt.getSymbole());
+            }
+        }
+    }
     cout << "Grille de l'adversaire (debug) :" << endl;
     cout << g1 << endl;
 
@@ -57,11 +65,11 @@ int main() {
         cout << "=============================================\n";
 
         cout << "Bateaux restants :" << endl;
-        cout << "  P  (5 cases)  : " << restant_P << endl;
-        cout << "  CR (4 cases)  : " << restant_CR << endl;
-        cout << "  CT (3 cases)  : " << restant_CT << endl;
-        cout << "  S  (3 cases)  : " << restant_S << endl;
-        cout << "  T  (2 cases)  : " << restant_T << endl;
+        cout << "  P : Porte_avion (5 cases)  : " << restant_P << endl;
+        cout << "  C : Croiseur (4 cases)  : " << restant_CR << endl;
+        cout << "  K : Contre-toprilleur (3 cases)  : " << restant_CT << endl;
+        cout << "  S : Sous-marin (3 cases)  : " << restant_S << endl;
+        cout << "  T : Torpilleur (2 cases)  : " << restant_T << endl;
 
         cout << "\nGrille actuelle :" << endl;
         cout << g2 << endl;
@@ -73,8 +81,8 @@ int main() {
         bool deja_place = false;
 
         if (choix.getType() == "P" && restant_P == 0) deja_place = true;
-        if (choix.getType() == "CR" && restant_CR == 0) deja_place = true;
-        if (choix.getType() == "CT" && restant_CT == 0) deja_place = true;
+        if (choix.getType() == "C" && restant_CR == 0) deja_place = true;
+        if (choix.getType() == "K" && restant_CT == 0) deja_place = true;
         if (choix.getType() == "S" && restant_S == 0) deja_place = true;
         if (choix.getType() == "T" && restant_T == 0) deja_place = true;
 
@@ -88,8 +96,8 @@ int main() {
         char symbole = '?';
 
         if (choix.getType() == "P") { L = 5; symbole = 'P'; }
-        if (choix.getType() == "CR") { L = 4; symbole = 'C'; }
-        if (choix.getType() == "CT") { L = 3; symbole = 'K'; }
+        if (choix.getType() == "C") { L = 4; symbole = 'C'; }
+        if (choix.getType() == "K") { L = 3; symbole = 'K'; }
         if (choix.getType() == "S") { L = 3; symbole = 'S'; }
         if (choix.getType() == "T") { L = 2; symbole = 'T'; }
 
@@ -105,8 +113,8 @@ int main() {
 
         // Mise à jour du compteur
         if (choix.getType() == "P")  restant_P--;
-        if (choix.getType() == "CR") restant_CR--;
-        if (choix.getType() == "CT") restant_CT--;
+        if (choix.getType() == "C") restant_CR--;
+        if (choix.getType() == "K") restant_CT--;
         if (choix.getType() == "S")  restant_S--;
         if (choix.getType() == "T")  restant_T--;
 
@@ -193,3 +201,4 @@ int main() {
 
     return 0;
 }
+

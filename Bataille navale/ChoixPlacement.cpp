@@ -11,13 +11,12 @@ ChoixPlacement ChoixPlacement::lire_placement(){
 
     cout << "Vous allez placer vos bateaux sur la grille vide 10 x 10 ci-dessus\n\n";
     cout << "Pour chaque bateau, vous devrez entrer :\n";
-    cout << "   - le type de bateau (CT, CR, P, S ou T°\n";
+    cout << "   - le type de bateau (C, K, P, S ou T)\n";
+    cout << "   - la colonne(x)\n";
     cout << "   - la ligne (y)\n";
-    cout << "   - la colonne (x)\n";
     cout << "   - l'orientation : H (horizontal) ou V (vertical)\n\n";
 
-    cout << "Exemple : CR 4 1 V\n";
-    cout << " → place un Croiseur qui part de (x=1, y=4) vers le bas.\n\n";
+    cout << "Exemple : C 4 1 V place un Croiseur qui part de(x = 1, y = 4) vers le bas.\n\n";
 
     cout << "IMPORTANT :\n";
     cout << " - Le bateau doit tenir entier dans la grille.\n";

@@ -3,31 +3,27 @@
 #include "grille.h"
 
 
-
 const vector<vector<char>>& grille::getGrille() const {
 	return lagrille;
 }
 
 //declaration de la surchage pour afficher la grille 
 ostream& operator<<(ostream& os, const grille& g) {
-	os << "  ";
-	for(int x=0; x<10;x++)
+	os << "   ";
+	for (int x = 0; x < 10; x++)
 	{
-		os << " " << char('A'+ x) << " ";
-		os << "\n";
+		os << char('A' + x) << " ";
+	}
 
-		//ligne de séparation
-		os << "------------------------------\n";
+	os << "\n";
+	for (int y = 0; y < 10; y++) {
+		os << " " << y << "|";//index ligne
 
-		//lignes avec numéros
-		for (int y = 0; y < 10; y++) {
-			os << " " << y << "|";//index ligne
-
-			for (int x = 0; x < 10; x++)
-			{
-				os << g.lagrille[y][x] << "|";
-			}
-			os << "------------------------------\n";
+		for (int x = 0; x < 10; x++)
+		{
+			os << g.lagrille[y][x] << "|";
 		}
+		os << "\n";
+	};
 	return os;
-};
+}

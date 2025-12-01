@@ -2,10 +2,8 @@
 #include <iostream>
 using namespace std;
 
-
 ChoixPlacement ChoixPlacement::lire_placement(){
     ChoixPlacement choix;
-
 
     cout << "=============================================\n";
     cout << "        MODE PLACEMENT DES BATEAUX\n";

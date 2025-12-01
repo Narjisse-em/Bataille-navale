@@ -10,13 +10,24 @@ const vector<vector<char>>& grille::getGrille() const {
 
 //declaration de la surchage pour afficher la grille 
 ostream& operator<<(ostream& os, const grille& g) {
-	for (int y = 0; y < 10; y++) {
-		os << " " << y << "|";//index ligne
+	os << "  ";
+	for(int x=0; x<10;x++)
+	{
+		os << " " << char('A'+ x) << " ";
+		os << "\n";
 
-		for (int x = 0; x < 10; x++)
-		{
-			os << g.lagrille[y][x] << ' ';
-		os << '\n';
-	}
+		//ligne de séparation
+		os << "------------------------------\n";
+
+		//lignes avec numéros
+		for (int y = 0; y < 10; y++) {
+			os << " " << y << "|";//index ligne
+
+			for (int x = 0; x < 10; x++)
+			{
+				os << g.lagrille[y][x] << "|";
+			}
+			os << "------------------------------\n";
+		}
 	return os;
 };

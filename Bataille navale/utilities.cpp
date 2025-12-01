@@ -74,6 +74,7 @@ ResultatTir evaluer_tir(grille& g, int x, int y) {
 
 	if (c == '~') {            // vide
 		c = 'O';               // tir dans l'eau
+		//cout << "A L EAU" << endl;
 		return A_L_EAU;
 	}
 	else if (c == 'O' || c == 'X') {
@@ -90,9 +91,11 @@ ResultatTir evaluer_tir(grille& g, int x, int y) {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				if (g[i][j] == bateau)
+					//cout << "TOUCHE" << endl;
 					return TOUCHE;
 			}
 		}
+		//cout << "COULE" << endl;
 		return COULE;
 	}
 }

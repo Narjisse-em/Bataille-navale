@@ -82,20 +82,22 @@ ResultatTir evaluer_tir(grille& g, int x, int y) {
 		return ResultatTir::A_L_EAU;
 	}
 	else {
-		// On a une lettre de bateau
+		// c est la lettre du bateau qu'on copie avnt de la remplacer par 'X'
+		char bateau = c;
 		c = 'X';
 
-		// Vérifier si le bateau est coulé
-		// → vérifier si une case du même type existe encore
-		char bateau = c;
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				if (g[i][j] == bateau)
-					//cout << "TOUCHE" << endl;
+		// Pour vérifier si le bateau est coulé, on vérifie si une case du même type existe encore
+		for (int i = 0; i < 10; i++) 
+		{
+			for (int j = 0; j < 10; j++) 
+			{
+				if (g[i][j] == bateau) {
 					return ResultatTir::TOUCHE;
+				}
 			}
 		}
-		//cout << "COULE" << endl;
+
+		// Sinon il n’en reste plus : bateau coulé
 		return ResultatTir::COULE;
 	}
 }

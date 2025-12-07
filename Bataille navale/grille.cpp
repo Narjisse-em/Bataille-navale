@@ -17,6 +17,7 @@ ostream& operator<<(ostream& os, const grille& g) {
 		os <<  x << " ";
 	}
 
+	//cases et coordonnées y
 	os << "\n";
 	for (int y = 0; y < 10; y++) {
 		os << " " << y << "|";//index ligne côté gauche

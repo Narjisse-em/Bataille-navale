@@ -9,21 +9,32 @@ const vector<vector<char>>& grille::getGrille() const {
 
 //declaration de la surchage pour afficher la grille 
 ostream& operator<<(ostream& os, const grille& g) {
+
+	//chiffres du dessus pour les coordonnées en x
 	os << "   ";
 	for (int x = 0; x < 10; x++)
 	{
-		os << char('A' + x) << " ";
+		os <<  x << " ";
 	}
 
 	os << "\n";
 	for (int y = 0; y < 10; y++) {
-		os << " " << y << "|";//index ligne
+		os << " " << y << "|";//index ligne côté gauche
 
 		for (int x = 0; x < 10; x++)
 		{
 			os << g.lagrille[y][x] << "|";
 		}
+		os << " " << y ;//index ligne côté droit
+
 		os << "\n";
 	};
+
+	//chiffres du dessous pour les coordonnées en x
+	os << "   ";
+	for (int x = 0; x < 10; x++)
+	{
+		os << x << " ";
+	}
 	return os;
 }

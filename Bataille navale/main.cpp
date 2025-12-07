@@ -43,8 +43,6 @@ int main() {
     cout << "Grille de l'adversaire (debug) :" << endl;
     cout << g1 << endl;
 
-
-
 	// placement du jouer à la main
 
     grille g2;
@@ -198,7 +196,6 @@ int main() {
             break;
         }
     }
-
     return 0;
 }
 

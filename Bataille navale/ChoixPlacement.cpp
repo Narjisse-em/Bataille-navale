@@ -2,30 +2,58 @@
 #include <iostream>
 using namespace std;
 
-ChoixPlacement ChoixPlacement::lire_placement(){
-    ChoixPlacement choix;
+ChoixPlacement ChoixPlacement::lire_placement() {
 
-    cout << "=============================================\n";
-    cout << "        MODE PLACEMENT DES BATEAUX\n";
-    cout << "=============================================\n\n";
+	ChoixPlacement choix;
+	string type;   // on lit d'abord une string pour éviter de lire des erruers comme "T5" et causer des bugs
+	int x, y;
+	char orientation;
 
-    cout << "Vous allez placer vos bateaux sur la grille vide 10 x 10 ci-dessus\n\n";
-    cout << "Pour chaque bateau, vous devrez entrer :\n";
-    cout << "   - le type de bateau (C, K, P, S ou T)\n";
-    cout << "   - la colonne(x)\n";
-    cout << "   - la ligne (y)\n";
-    cout << "   - l'orientation : H (horizontal) ou V (vertical)\n\n";
+	while (true) {
 
-    cout << "Exemple : C 4 1 V place un Croiseur qui part de(x = 1, y = 4) vers le bas.\n\n";
+		cout << "Entrez : type x y orientation (ex: C 4 1 V) : ";
+		cin >> type >> x >> y >> orientation;
 
-    cout << "IMPORTANT :\n";
-    cout << " - Le bateau doit tenir entier dans la grille.\n";
-    cout << " - Il ne doit pas chevaucher un autre bateau.\n";
-    cout << " - Il ne doit pas sortir des limites.\n\n";
-    cin >> choix.type >> choix.x >> choix.y >> choix.orientation;
+		// Erreur de saisie -> vide le buffer et recommence
+		if (!cin) {
+			cin.clear();
+			cin.ignore(9999, '\n');
+			cout << "Saisie invalide. Reessayez.\n";
+			continue;
+		}
 
-    // Mise en forme
-    for (char& c : choix.type) c = toupper(c);
-    choix.orientation = toupper(choix.orientation);
-    return choix;
+		// Vérifier que type est une LETTRE seule
+		if (type.size() != 1) {
+			cout << "Type invalide. Entrez une seule lettre (C,K,P,S,T).\n";
+			continue;
+		}
+
+		char t = toupper(type[0]);
+
+		if (t != 'C' && t != 'K' && t != 'P' && t != 'S' && t != 'T') {
+			cout << "Type invalide.\n";
+			continue;
+		}
+
+		// Vérifier coordonnées
+		if (x < 0 || x >= 10 || y < 0 || y >= 10) {
+			cout << "Coordonnees invalides.\n";
+			continue;
+		}
+
+		orientation = toupper(orientation);
+		if (orientation != 'H' && orientation != 'V') {
+			cout << "Orientation invalide.\n";
+			continue;
+		}
+
+		// ------------------------
+		// Tout est valide → on renvoie
+		// ------------------------
+		choix.type = t;
+		choix.x = x;
+		choix.y = y;
+		choix.orientation = orientation;
+		return choix;
+	}
 }

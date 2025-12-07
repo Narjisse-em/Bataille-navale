@@ -56,6 +56,24 @@ int main() {
 
     int total_a_placer = 5;
 
+	cout << "=============================================\n";
+	cout << "        MODE PLACEMENT DES BATEAUX\n";
+	cout << "=============================================\n\n";
+
+	cout << "Vous allez placer vos bateaux sur la grille vide 10 x 10 ci-dessus\n\n";
+	cout << "Pour chaque bateau, vous devrez entrer :\n";
+	cout << "   - le type de bateau (C, K, P, S ou T)\n";
+	cout << "   - la colonne(x)\n";
+	cout << "   - la ligne (y)\n";
+	cout << "   - l'orientation : H (horizontal) ou V (vertical)\n\n";
+
+	cout << "Exemple : C 4 1 V place un Croiseur qui part de(x = 1, y = 4) vers le bas.\n\n";
+
+	cout << "IMPORTANT :\n";
+	cout << " - Le bateau doit tenir entier dans la grille.\n";
+	cout << " - Il ne doit pas chevaucher un autre bateau.\n";
+	cout << " - Il ne doit pas sortir des limites.\n\n";
+
     while (total_a_placer > 0)
     {
         cout << "\n=============================================\n";
@@ -127,8 +145,15 @@ int main() {
 
     cout << "\n===== DEBUT DU COMBAT ! =====\n";
 
+    //on initialise les grilles de la vue de l'ordi et de celle du joueur
     grille vueOrdi;     // ce que VOUS voyez de la grille adverse
     grille vueJoueur;   // ce que l’ORDI sait de votre grille
+	for (int i = 0; i < 10; i++)
+		for (int j = 0; j < 10; j++) {
+			vueOrdi[i][j] = '~';
+			vueJoueur[i][j] = '~';
+		}
+
 
     bool fini = false;
 

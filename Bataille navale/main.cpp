@@ -159,24 +159,31 @@ int main() {
 
     while (!fini)
     {
-		// tour du joueur
+        // tour du joueur
         cout << "\n=========== VOTRE TOUR ===========\n";
 
-        Tir tirJ = lire_tir_joueur();
-        ResultatTir res = evaluer_tir(g1, tirJ.x, tirJ.y);
+        Tir tirJ;
+        ResultatTir res;
 
-		while (res == ResultatTir::DEJA_CHOISI) {
-			cout << "Vous avez déjà tiré à cet endroit. Reessayez.\n";
-			tirJ = lire_tir_joueur();
-		}
-        if (res != ResultatTir::DEJA_CHOISI) {
+        while (true) {
+            tirJ = lire_tir_joueur();
+            res = evaluer_tir(g1, tirJ.x, tirJ.y);
+
+            if (res == ResultatTir::DEJA_CHOISI) {
+                cout << "Vous avez déjà tiré à cet endroit. Reessayez.\n";
+                continue;
+            }
+
+            //tir valide : on affiche le résultat
             if (res == ResultatTir::A_L_EAU)  cout << "A L'EAU.\n";
             if (res == ResultatTir::TOUCHE)   cout << "TOUCHE !\n";
             if (res == ResultatTir::COULE)    cout << "COULE !\n";
-        }
+        
         // Mise à jour de la vue
         vueOrdi[tirJ.y][tirJ.x] = g1[tirJ.y][tirJ.x];
 
+        break;
+    }
         cout << "\n--- Votre vue de l’adversaire ---\n";
         cout << vueOrdi << endl;
 

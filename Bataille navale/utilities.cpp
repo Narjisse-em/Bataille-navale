@@ -72,37 +72,39 @@ ResultatTir evaluer_tir(grille& g, int x, int y) {
 
 	char& c = g[y][x];
 
+	//à l'eau
 	if (c == '~') {            // vide
 		c = 'O';               // tir dans l'eau
 		//cout << "A L EAU" << endl;
 		return ResultatTir::A_L_EAU;
 	}
 
-	else if (c == '0'||c == 'X') {
+	//déjà tiré
+	else if (c == 'O'||c == 'X') {
 		//déjà tiré -> pas d'effet
 		return ResultatTir::DEJA_CHOISI;
 
 	}
 
-	else {
-		// c est la lettre du bateau qu'on copie avnt de la remplacer par 'X'
-		char bateau = c;
-		c = 'X';
+	//touché ou coulé
+	// c est la lettre du bateau qu'on copie avnt de la remplacer par 'X'
+	char bateau = c;
+	c = 'X';
 
-		// Pour vérifier si le bateau est coulé, on vérifie si une case du même type existe encore
-		for (int i = 0; i < 10; i++) 
+	// Pour vérifier si le bateau est coulé, on vérifie si une case du même type existe encore
+	for (int i = 0; i < 10; i++) 
+	{
+		for (int j = 0; j < 10; j++) 
 		{
-			for (int j = 0; j < 10; j++) 
-			{
-				if (g[i][j] == bateau) {
-					return ResultatTir::TOUCHE;
-				}
+			if (g[i][j] == bateau) {
+				return ResultatTir::TOUCHE;
 			}
 		}
-
-		// Sinon il n’en reste plus : bateau coulé
-		return ResultatTir::COULE;
 	}
+
+	// Sinon il n’en reste plus : bateau coulé
+	return ResultatTir::COULE;
+	
 }
 
 //ordinateur adverse qui tire au hasard mais ne doit pas tirer 2 fois au même endroit!

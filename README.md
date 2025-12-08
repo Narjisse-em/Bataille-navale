@@ -1,4 +1,4 @@
-# Projet Bataille Navale — TP MEDEVR (Réalité Virtuelle)
+# Projet Bataille Navale — TP MEDEVR
 
 Ce dépôt contient l’ensemble des éléments demandés pour le TP **Bataille Navale** dans le cadre du module MEDEVR – Option Réalité Virtuelle à l’École Centrale de Nantes.
 

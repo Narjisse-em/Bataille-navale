@@ -4,4 +4,4 @@ struct Tir {
     int y;
 };
 
-enum class ResultatTir { A_L_EAU, TOUCHE, COULE };
+enum class ResultatTir { A_L_EAU, TOUCHE, COULE, DEJA_CHOISI };

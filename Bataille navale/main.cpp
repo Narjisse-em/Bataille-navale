@@ -165,10 +165,15 @@ int main() {
         Tir tirJ = lire_tir_joueur();
         ResultatTir res = evaluer_tir(g1, tirJ.x, tirJ.y);
 
-        if (res == ResultatTir::A_L_EAU)  cout << "A L'EAU.\n";
-        if (res == ResultatTir::TOUCHE)   cout << "TOUCHE !\n";
-        if (res == ResultatTir::COULE)    cout << "COULE !\n";
-
+		while (res == ResultatTir::DEJA_CHOISI) {
+			cout << "Vous avez déjà tiré à cet endroit. Reessayez.\n";
+			tirJ = lire_tir_joueur();
+		}
+        if (res != ResultatTir::DEJA_CHOISI) {
+            if (res == ResultatTir::A_L_EAU)  cout << "A L'EAU.\n";
+            if (res == ResultatTir::TOUCHE)   cout << "TOUCHE !\n";
+            if (res == ResultatTir::COULE)    cout << "COULE !\n";
+        }
         // Mise à jour de la vue
         vueOrdi[tirJ.y][tirJ.x] = g1[tirJ.y][tirJ.x];
 
@@ -196,7 +201,6 @@ int main() {
         cout << "L’ordinateur tire en : (" << tirO.x << ", " << tirO.y << ")\n";
 
         ResultatTir res2 = evaluer_tir(g2, tirO.x, tirO.y);
-
         if (res2 == ResultatTir::A_L_EAU)  cout << "L’ordinateur a rate." << endl;
         if (res2 == ResultatTir::TOUCHE)   cout << "L’ordinateur vous a touche." << endl;
         if (res2 == ResultatTir::COULE)    cout << "L’ordinateur a coule un de vos bateaux !" << endl;

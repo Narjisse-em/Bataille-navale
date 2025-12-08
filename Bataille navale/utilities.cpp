@@ -77,10 +77,13 @@ ResultatTir evaluer_tir(grille& g, int x, int y) {
 		//cout << "A L EAU" << endl;
 		return ResultatTir::A_L_EAU;
 	}
-	else if (c == 'O' || c == 'X') {
-		// déjà tiré -> pas d'effet
-		return ResultatTir::A_L_EAU;
+
+	else if (c == '0'||c == 'X') {
+		//déjà tiré -> pas d'effet
+		return ResultatTir::DEJA_CHOISI;
+
 	}
+
 	else {
 		// c est la lettre du bateau qu'on copie avnt de la remplacer par 'X'
 		char bateau = c;

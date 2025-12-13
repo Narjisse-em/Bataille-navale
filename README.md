@@ -36,17 +36,17 @@ Il contient :
 
 ## 2. Modélisation UML et diagramme d’état-transition
 
-- [Diagramme UML de classes](diagramme_classe.pdf)  
+- [Diagramme UML de classes](data/diagramme_classe.pdf)  
   Diagramme décrivant la structure des classes et leurs relations.
 
-- [Diagramme d’état-transition](Diagramme_etat.md)  
+- [Diagramme d’état-transition](data/Diagramme_etat.md)  
   Diagramme représentant le déroulement d’une partie et les transitions entre états.
 
 ---
 
 ## 3. Planification et répartition des tâches
 
-- [Compte rendu MEDEVR](CR_MEDEVR.pdf)
+- [Compte rendu MEDEVR](data/CR_MEDEVR.pdf)
 
 Ce document présente :
 - la méthode de travail adoptée par l’équipe,
@@ -58,7 +58,7 @@ Ce document présente :
 
 ## 4. Documentation utilisateur et documentation technique
 
-- [Documentation complète (utilisateur + technique)](documentation.zip)
+- [Documentation complète (utilisateur + technique)](data/documentation.zip)
 
 Cette documentation inclut :
 - les instructions pour lancer et utiliser le jeu,
@@ -70,7 +70,7 @@ Cette documentation inclut :
 
 ## 5. Étude des métriques de code
 
-- [Métriques de code et analyse](MEDEVRV-metrique%20et%20documentation.pdf)
+- [Métriques de code et analyse](data/MEDEVRV-metrique%20et%20documentation.pdf)
 
 Ce document contient :
 - la complexité cyclomatique par fichier,
@@ -84,7 +84,7 @@ Ce document contient :
 
 Chaque étudiant a rédigé un paragraphe décrivant son travail personnel, poussé sur le dépôt Git.
 
-- [Travail individuel – Florian Barbe](Paragraphe_bataille_navale_Florain.pdf)
+- [Travail individuel – Florian Barbe](data/Paragraphe_bataille_navale_Florain.pdf)
 - Travail individuel – Narjisse (à compléter)
 - Travail individuel – Cheikhou Oumar (à compléter)
 

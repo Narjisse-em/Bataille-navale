@@ -1,89 +1,94 @@
 # Projet Bataille Navale — TP MEDEVR
 
-Ce dépôt contient l’ensemble des éléments demandés pour le TP **Bataille Navale** dans le cadre du module MEDEVR – Option Réalité Virtuelle à l’École Centrale de Nantes.
+Ce dépôt contient l’ensemble des éléments demandés pour le TP **Bataille Navale** dans le cadre du module **MEDEVRV** – Option Réalité Virtuelle à l’École Centrale de Nantes.
+Membres du groupe : Narjisse El Manssouri, Cheikhou Oumar Ba, Florian Barbe.
 
 Le sujet du TP demande de fournir :
-
 - une **modélisation UML** (diagramme de classes + diagramme d’état-transition),
 - une **planification et répartition des tâches**,
 - le **code complet + exécutable**,
 - une **documentation utilisateur**,
 - une **documentation technique**,
-- les **métriques de code**.
+- une **étude des métriques de code**,
+- une **explication du travail individuel de chaque étudiant**.
 
-Ce README explique où trouver chaque élément dans le dépôt GitHub.
+Ce README sert de point d’entrée et indique précisément où trouver chaque élément dans le dépôt GitHub.
 
 ---
 
-##  Organisation du dépôt
+## Organisation du dépôt
 
 ---
 
 ## 1. Code source + exécutable
 
-`Bataille navale/`
+Le code source du projet est disponible dans le dossier :
 
-Ce dossier contient :
+Bataille navale/
 
-- l’intégralité des fichiers `.cpp` et `.h`,
-- le `main.cpp` comprenant la boucle du jeu,
-- les classes : `grille`, `bateau`, `ChoixPlacement`, `Tir`,
-- les fonctions utilitaires dans `utilities.cpp`.
-
-Le projet est compilable directement via la solution Visual Studio :
-
-`Bataille navale.sln`
+Il contient :
+- l’ensemble des fichiers `.cpp` et `.h`,
+- le `main.cpp` contenant la boucle principale du jeu,
+- les classes principales (`grille`, `bateau`, `ChoixPlacement`, `Tir`),
+- les fonctions utilitaires regroupées dans `utilities.cpp` et `utilities.h`.
 
 ---
 
-## 2. Modélisation UML + diagramme d’état
- `data/diagramme de classe.pdf`  
-Diagramme UML des classes du projet.
+## 2. Modélisation UML et diagramme d’état-transition
 
-`data/Diagramme_etat.md`  
-Diagramme d’état-transition complet du déroulement d’une partie.
+- [Diagramme UML de classes](diagramme_classe.pdf)  
+  Diagramme décrivant la structure des classes et leurs relations.
+
+- [Diagramme d’état-transition](Diagramme_etat.md)  
+  Diagramme représentant le déroulement d’une partie et les transitions entre états.
 
 ---
 
 ## 3. Planification et répartition des tâches
 
-`data/CR_MEDEVR.pdf`
+- [Compte rendu MEDEVR](CR_MEDEVR.pdf)
 
-Vous y trouverez :
-
-- la méthode de travail adoptée,
+Ce document présente :
+- la méthode de travail adoptée par l’équipe,
 - la répartition des rôles,
 - les difficultés rencontrées,
-- les choix d’architecture.
+- les choix d’architecture effectués.
 
 ---
 
-## 4. Documentation utilisateur + documentation technique
+## 4. Documentation utilisateur et documentation technique
 
-`data/documentation.zip`
+- [Documentation complète (utilisateur + technique)](documentation.zip)
 
-Inclut :
-
-- comment lancer et utiliser le jeu,
-- la description des règles et de l’IHM console,
+Cette documentation inclut :
+- les instructions pour lancer et utiliser le jeu,
+- la description des règles et de l’interface console,
 - la structure détaillée du code,
 - les explications techniques des modules et fonctions.
 
 ---
 
-## 5. Métriques de code (SourceMonitor)
+## 5. Étude des métriques de code
 
-`data/CR_MEDEVRV.pdf`
+- [Métriques de code et analyse](MEDEVRV-metrique%20et%20documentation.pdf)
 
-Contient :
-
-- complexité cyclomatique par fichier,
-- profondeur d’imbrication,
-- lignes de code,
-- analyse qualitative du code.
+Ce document contient :
+- la complexité cyclomatique par fichier,
+- la profondeur d’imbrication,
+- le nombre de lignes de code,
+- une analyse qualitative globale du code.
 
 ---
 
-## Bonne lecture!
+## 6. Travail individuel des membres de l’équipe
 
+Chaque étudiant a rédigé un paragraphe décrivant son travail personnel, poussé sur le dépôt Git.
+
+- [Travail individuel – Florian Barbe](Paragraphe_bataille_navale_Florain.pdf)
+- Travail individuel – Narjisse (à compléter)
+- Travail individuel – Cheikhou Oumar (à compléter)
+
+---
+
+## Bonne lecture
 

@@ -1,4 +1,4 @@
-# TP MEDEVR - Bataille Navale
+# TP MEDEVRV - Bataille Navale
 
 Ce dépôt contient l’ensemble des éléments demandés pour le TP **Bataille Navale** dans le cadre du module **MEDEVRV** – Option Réalité Virtuelle à l’École Centrale de Nantes.
 Membres du groupe : Narjisse El Manssouri, Cheikhou Oumar Ba, Florian Barbe.
